@@ -4,7 +4,8 @@
   "description": "Our lib for TDD & JS hands-on course.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,10 @@
   "bugs": {
     "url": "https://github.com/henchaves/js-tdd-course/issues"
   },
-  "homepage": "https://github.com/henchaves/js-tdd-course#readme"
+  "homepage": "https://github.com/henchaves/js-tdd-course#readme",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.25.2"
+  }
 }
