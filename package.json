@@ -2,9 +2,12 @@
   "name": "js-tdd-course",
   "version": "1.0.0",
   "description": "Our lib for TDD & JS hands-on course.",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --color --progress --mode=development",
+    "watch": "npm run build -- --watch",
+    "server": "webpack-dev-server --open",
     "lint": "eslint src/**/*.js",
     "prepare": "husky install"
   },
@@ -27,6 +30,12 @@
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.25.2",
-    "husky": "^7.0.4"
+    "husky": "^7.0.4",
+    "webpack": "^5.60.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.4.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }
