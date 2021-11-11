@@ -1,66 +1,27 @@
 import { expect } from 'chai';
-import { it } from 'mocha';
-import calc from '../src/index';
+import { describe, it } from 'mocha';
+import FizzBuzz from '../src/index';
 
 describe('Main', () => {
-  // smoke tests
-  describe('Smoke tests', () => {
-    it('should exist', () => {
-      expect(calc).to.exist;
-    });
-
-    it('should exist the `sum` method', () => {
-      expect(calc.sum).to.exist;
-      expect(calc.sum).to.be.a('function');
-    });
-
-    it('should exist the `sub` method', () => {
-      expect(calc.sub).to.exist;
-      expect(calc.sub).to.be.a('function');
-    });
-
-    it('should exist the `div` method', () => {
-      expect(calc.div).to.exist;
-      expect(calc.div).to.be.a('function');
-    });
-
-    it('should exist the `mul` method', () => {
-      expect(calc.mul).to.exist;
-      expect(calc.mul).to.be.a('function');
-    });
-
-
+  it('should return `Fizz` when multiple of 3', () => {
+    expect(FizzBuzz(3)).to.be.equal('Fizz');
+    expect(FizzBuzz(6)).to.be.equal('Fizz');
   });
 
-  describe('Sum', () => {
-    it('should return 4 when `sum(2,2)', () => {
-      expect(calc.sum(2, 2)).to.be.equal(4);
-    });
+  it('should return `Buzz` when multiple of 5', () => {
+    expect(FizzBuzz(5)).to.be.equal('Buzz');
   });
 
-  describe('Sub', () => {
-    it('should return 4 when `sub(6,2)`', () => {
-      expect(calc.sub(6, 2)).to.be.equal(4);
-    });
-
-    it('should return -44 when `sub(6,10)`', () => {
-      expect(calc.sub(6, 10)).to.be.equal(-4);
-    });
+  it('should return `FizzBuzz` when multiple of 3 and 5', () => {
+    expect(FizzBuzz(15)).to.be.equal('FizzBuzz');
   });
 
-  describe('Mul', () => {
-    it('should return 4 when `mul(2,2)`', () => {
-      expect(calc.mul(2, 2)).to.be.equal(4);
-    });
+  it('should return the number when non-multiple', () => {
+    expect(FizzBuzz(4)).to.be.equal(4);
+    expect(FizzBuzz(23)).to.be.equal(23);
   });
 
-  describe('Div', () => {
-    it('should return 4 when `div(16, 4)`', () => {
-      expect(calc.div(16, 4)).to.be.equal(4);
-    });
-
-    it('should return `Cannot divide by zero` when divide by 0', () => {
-      expect(calc.div(4, 0)).to.be.equal('Cannot divide by zero');
-    })
-  })
+  it('should return 0 when 0', () => {
+    expect(FizzBuzz(0)).to.be.equal(0);
+  });
 });

@@ -1,14 +1,9 @@
-const sum = (num1, num2) => num1 + num2;
-
-const sub = (num1, num2) => num1 - num2;
-
-const div = (num1, num2) => {
-  const result = (num2 === 0) ? 'Cannot divide by zero' : num1 / num2;
-  return result;
+const FizzBuzz = (num) => {
+  if (num === 0) return 0;
+  if (num % 3 === 0 && num % 5 === 0) return 'FizzBuzz';
+  if (num % 3 === 0) return 'Fizz';
+  if (num % 5 === 0) return 'Buzz';
+  return num;
 };
 
-const mul = (num1, num2) => num1 * num2;
-
-export default {
-  sum, sub, div, mul,
-};
+export default FizzBuzz;
