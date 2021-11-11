@@ -1,12 +1,14 @@
-import _ from 'lodash';
+const sum = (num1, num2) => num1 + num2;
 
-function component() {
-  const element = document.createElement('div');
+const sub = (num1, num2) => num1 - num2;
 
-  // Lodash, currently included via a script, is required for this line to work
-  element.innerHTML = _.join(['Hello', 'webpack!'], ' ');
+const div = (num1, num2) => {
+  const result = (num2 === 0) ? 'Cannot divide by zero' : num1 / num2;
+  return result;
+};
 
-  return element;
-}
+const mul = (num1, num2) => num1 * num2;
 
-document.body.appendChild(component());
+export default {
+  sum, sub, div, mul,
+};
